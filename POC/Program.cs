@@ -9,7 +9,7 @@ namespace POC
         {
             JObject ObjSon = new JObject();
             string Jstring = @"{
-                                  'PaymentMode': 'DCB',
+                                  'PaymentMode': 'DCBf',
                                   'TotalInvestAMount': '5',
                                   'PG': 'BillDesk',
                                   'Campaign': 'ADDTIONALPURCHASE',
