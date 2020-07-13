@@ -15,6 +15,15 @@ namespace FileDownload
                 {
                     result = webClient.DownloadData("http://midoffice.motilaloswal.com/PMS/UPLOAD/FEEANEXURE/SIDDHARTH KARMARKAR AOP.jpg");
                 }
+
+                string data = null;
+                data = "mark";
+                string data2 =data ?? "jack";
+                Console.WriteLine(data2);
+                bool d = data is string;
+                Console.WriteLine(d);
+                Console.WriteLine(d == true ? "Yes" : "No");
+                
             }
             catch (Exception ex)
             {
