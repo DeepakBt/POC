@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Thread", "Thread\Thread.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Json", "Json\Json.csproj", "{48D3FB2F-C097-4625-AA25-44BBD91D5017}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoTestAlteration", "..\DemoTestAlteration\DemoTestAlteration\DemoTestAlteration.csproj", "{58A3CD96-0235-43B2-8689-C3A6D8A3F6E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoTestAlteration", "DemoTestAlteration\DemoTestAlteration.csproj", "{58A3CD96-0235-43B2-8689-C3A6D8A3F6E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
