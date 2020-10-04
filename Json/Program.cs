@@ -26,7 +26,24 @@ namespace Json
             //Data = @"adasdasd";
             //Data = @"<myData xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>< Name > Jack </ Name >< Address > Mumbai </ Address >< Email > jack@example.com </ Email ></ myData >";
             MyServer(Data);
+            Console.WriteLine("-----------------------------------------");
+            Console.WriteLine(Program.RemoveDuplicateChars("Deepak"));
             Console.ReadKey();
+        }
+
+        public static string RemoveDuplicateChars(string key)
+        {
+            string table = "";
+            string result = "";
+            foreach (char value in key)
+            {
+                if (table.IndexOf(value) == -1)
+                {
+                    table += value;
+                    result += value;
+                }
+            }
+            return result;
         }
 
         public static void MyServer(string JSONXML)
@@ -81,7 +98,6 @@ namespace Json
             }
             return sw.ToString();
         }
-
     }
     public class myData
     {
