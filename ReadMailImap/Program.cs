@@ -11,19 +11,17 @@ namespace ReadMailImap
         {
             Console.WriteLine("Welcome to mail box");
             ImapClient imap = new ImapClient();
-            imap.Host = "outlook.office365.com";
-            imap.Port = 143;
-            imap.Username = "User@outlook.com";
-            imap.Password = "Pass";
-            imap.ConnectionProtocols = ConnectionProtocols.Ssl;
-            imap.Connect();
-            imap.Select("Inbox");
-            int MsgCount = imap.GetMessageCount("Inbox");
-            for (int i = MsgCount; i >= 1; i--)
-            {
-                MailMessage ObjMail = imap.GetFullMessage(i);
-                GetMail(ObjMail);
-            }
+            ImapClient Objimap = new ImapClient();
+            Objimap = ConnectGmailIMap("outlook.office365.com", "uuser@outlook.com", "Pass", 143, imap);
+            int MsgCount = Objimap.GetMessageCount("Inbox");
+            MailMessage ObjMes = Objimap.GetFullMessage(MsgCount);
+            GetMail(ObjMes);
+            //for (int i = MsgCount; i >= 1; i--)
+            //{
+            //    MailMessage ObjMes = Objimap.GetFullMessage(i);
+            //    GetMail(ObjMes);
+            //}
+
         }
         public static ImapClient ConnectGmailIMap(string Host, string UserName, string Password, int Port, ImapClient IMap)
         {
@@ -36,6 +34,7 @@ namespace ReadMailImap
                 IMap.ConnectionProtocols = ConnectionProtocols.Ssl;
                 IMap.Port = Port;
                 IMap.Connect();
+                IMap.Select("Inbox");
                 Console.WriteLine("IMap Connected");
                 return IMap;
             }
