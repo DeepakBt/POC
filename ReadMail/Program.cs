@@ -20,10 +20,15 @@ namespace ReadMail
                 Console.WriteLine("Welcome to mail box");
                 Pop3Client pop=new Pop3Client();
                 Pop3Client ObjPop = new Pop3Client();
-                ObjPop=ConnectGmailPOP("pop.gmail.com", "user@gmail.com", "Password",995,true, pop);
+                ObjPop=ConnectGmailPOP("pop.gmail.com", "@.", "@#",995,true, pop);
                 int msgCount = ObjPop.GetMessageCount();
                 MailMessage ObjMes = ObjPop.GetMessage(msgCount);
                 GetMail(ObjMes);
+                //for (int i = msgCount; i >= 1; i--)
+                //{
+                //    MailMessage ObjMes = ObjPop.GetMessage(i);
+                //    GetMail(ObjMes);
+                //}
             }
             catch (Exception ex)
             {
