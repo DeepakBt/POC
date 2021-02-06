@@ -9,18 +9,25 @@ namespace ReadMailImap
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to mail box");
-            ImapClient imap = new ImapClient();
-            ImapClient Objimap = new ImapClient();
-            Objimap = ConnectGmailIMap("outlook.office365.com", "uuser@outlook.com", "Pass", 143, imap);
-            int MsgCount = Objimap.GetMessageCount("Inbox");
-            MailMessage ObjMes = Objimap.GetFullMessage(MsgCount);
-            GetMail(ObjMes);
-            //for (int i = MsgCount; i >= 1; i--)
-            //{
-            //    MailMessage ObjMes = Objimap.GetFullMessage(i);
-            //    GetMail(ObjMes);
-            //}
+            try
+            {
+                Console.WriteLine("Welcome to mail box");
+                ImapClient imap = new ImapClient();
+                ImapClient Objimap = new ImapClient();
+                Objimap = ConnectGmailIMap("outlook.office365.com", "uuser@outlook.com", "Pass", 143, imap);
+                int MsgCount = Objimap.GetMessageCount("Inbox");
+                MailMessage ObjMes = Objimap.GetFullMessage(MsgCount);
+                GetMail(ObjMes);
+                //for (int i = MsgCount; i >= 1; i--)
+                //{
+                //    MailMessage ObjMes = Objimap.GetFullMessage(i);
+                //    GetMail(ObjMes);
+                //}
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception : {Convert.ToString(ex.Message)}");
+            }
 
         }
         public static ImapClient ConnectGmailIMap(string Host, string UserName, string Password, int Port, ImapClient IMap)
