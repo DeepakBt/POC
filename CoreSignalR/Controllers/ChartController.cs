@@ -21,7 +21,7 @@ namespace CoreSignalR.Controllers
         }
         public IActionResult GetData()
         {
-            var timerManager = new TimerManager(() => _hub.Clients.All.SendAsync("transferchartdata", DataManager.GetData()));
+            //var timerManager = new TimerManager(() => _hub.Clients.All.SendAsync("transferchartdata", DataManager.GetData()));
             return Ok(new { Message = "Request Completed" });
         }
     }

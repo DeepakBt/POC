@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -47,7 +48,7 @@ namespace CoreSignalR
             app.UseRouting();
             app.UseCors("CorsPolicy");
             app.UseAuthorization();
-
+            SqlDependency.Start("Server=DESKTOP-MRNOIMN;Database =TestDB; Integrated Security = true;");
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
