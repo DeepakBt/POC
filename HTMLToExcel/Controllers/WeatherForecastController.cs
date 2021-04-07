@@ -110,6 +110,7 @@ tr:nth-child(even) {
                 Response.ContentType = "application/vnd.ms-excel";
                 Response.Headers.Add("Content-Disposition", "attachment; filename=MyExcel.xls");
                 Response.WriteAsync(str);
+                System.IO.File.WriteAllText(Environment.CurrentDirectory + "//myFile.xls", str);
             }
             catch
             {
