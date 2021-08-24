@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div>
+    @using (Html.BeginForm("index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div>
+            @Html.TextBox("ReqExcelFile", "", new { type = "file" }) <br />
+            <input type="submit" value="Upload" />
+            @ViewBag.Message
+        </div>
+    }
+</div>
