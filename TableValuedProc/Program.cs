@@ -5,6 +5,23 @@ namespace TableValuedProc
 {
     class Program
     {
+        /*
+        CREATE TYPE [dbo].[CustomerTypeDemo] AS TABLE(
+            ID INT,
+            City VARCHAR(100),
+            [State] VARCHAR(100),
+            Country VARCHAR(100)
+        )
+
+        ALTER PROCEDURE [dbo].[USP_COUNTRY]
+            @MyData  CustomerTypeDemo READONLY,
+            @SecParam VARCHAR(100)=NULL
+        AS
+        BEGIN
+            SELECT * FROM @MyData
+            Select @SecParam
+        END
+         */
         static void Main(string[] args)
         {
             DataTable dt = new DataTable();
